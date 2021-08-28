@@ -20,10 +20,19 @@ spec:
         backupTarget: s3://longhorn-backup/
         backupTargetCredentialSecret: minio-secret
         defaultDataPath: "/storage"
-        systemManagedComponentsNodeSelector: "disktype=ssd"
+        systemManagedComponentsNodeSelector: "disktype: ssd"
     longhornManager:
         nodeSelector:
             disktype: "ssd"
     longhornDriver:
         nodeSelector:
             disktype: "ssd"
+    ingress:
+      enabled: true
+      ingressClassName: ~
+      host: loyalslave.rocks
+      tls: true
+      tlsSecret: loyalslave-rocks-tls
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        kubernetes.io/tls-acme: true
