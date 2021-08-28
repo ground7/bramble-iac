@@ -36,3 +36,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: nginx
         kubernetes.io/tls-acme: true
+    service:
+      ui:
+        type: ClusterIP
+        nodePort: 8080
