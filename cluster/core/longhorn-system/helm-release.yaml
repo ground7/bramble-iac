@@ -20,7 +20,7 @@ spec:
         backupTarget: s3://longhorn-backup/
         backupTargetCredentialSecret: minio-secret
         defaultDataPath: "/storage"
-        systemManagedComponentsNodeSelector: "disktype:ssd"
+        systemManagedComponentsNodeSelector: "disktype=ssd"
     longhornManager:
         nodeSelector:
             disktype: "ssd"
