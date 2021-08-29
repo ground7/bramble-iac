@@ -21,6 +21,7 @@ spec:
         backupTargetCredentialSecret: minio-secret
         createDefaultDiskLabeledNodes: true
         defaultDataPath: "/storage"
+        defaultDataLocality: best-effort
     ingress:
       enabled: true
       ingressClassName: ~
