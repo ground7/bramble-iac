@@ -21,7 +21,6 @@ spec:
         backupTargetCredentialSecret: minio-secret
         createDefaultDiskLabeledNodes: true
         defaultDataPath: "/storage"
-        defaultReplicaCount: 2
         defaultDataLocality: best-effort
     ingress:
       enabled: true
