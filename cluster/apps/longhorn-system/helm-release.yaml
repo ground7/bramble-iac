@@ -20,10 +20,12 @@ spec:
         backupTarget: s3://longhorn-backup@us-east-1/
         backupTargetCredentialSecret: minio-secret
         defaultDataPath: "/storage"
+        defaultReplicaCount: 2
+        defaultDataLocality: best-effort
         systemManagedComponentsNodeSelector: "disktype: ssd"
-    longhornManager:
-        nodeSelector:
-            disktype: "ssd"
+    # longhornManager:
+    #     nodeSelector:
+    #         disktype: "ssd"
     longhornDriver:
         nodeSelector:
             disktype: "ssd"
