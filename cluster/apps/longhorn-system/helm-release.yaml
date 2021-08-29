@@ -22,13 +22,13 @@ spec:
         defaultDataPath: "/storage"
         defaultReplicaCount: 2
         defaultDataLocality: best-effort
-    #    systemManagedComponentsNodeSelector: "disktype: ssd"
-    #longhornManager:
-    #    nodeSelector:
-    #        disktype: "ssd"
-    longhornDriver:
-        nodeSelector:
-            disktype: "ssd"
+        systemManagedComponentsNodeSelector: "disktype: ssd"
+    # longhornManager:
+    #     nodeSelector:
+    #         disktype: "ssd"
+    # longhornDriver:
+    #     nodeSelector:
+    #         disktype: "ssd"
     ingress:
       enabled: true
       ingressClassName: ~
