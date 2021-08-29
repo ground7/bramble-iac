@@ -45,9 +45,8 @@ spec:
       enabled: true
       config: |
         # Homepage configuration
-        # See https://fontawesome.com/icons for icons options
-        title: "K8s Home Dashboard"
-        subtitle: "K8s"
+        title: "Bramble Dashboard"
+        subtitle: "Raspberry Pi Cluster Applications"
         # logo: "assets/tools/k8s.png"
         header: true
         footer: false
@@ -81,9 +80,9 @@ spec:
             text-subtitle: "#f5f5f5"
             card-shadow: rgba(0, 0, 0, 0.4)
             link-hover: "#ffdd57"
-            # background-image: "assets/tools/chain_matrix.png"
+            background-image: "assets/tools/raspberrypi.jpg"
         links:
-          - name: "GitOps"
+          - name: "Bramble IAC Repo"
             # icon: "fab fa-github"
             url: "https://github.com/ground7/bramble-iac"
             target: "_blank"
