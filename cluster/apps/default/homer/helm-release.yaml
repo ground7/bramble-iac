@@ -16,7 +16,8 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
   dependsOn:
-    - name: longhorn-system/longhorn
+    - name: longhorn
+      namespace: longhorn-system
   values:
     image:
       repository: b4bz/homer
