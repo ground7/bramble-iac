@@ -35,6 +35,6 @@ spec:
               - "homer.${SECRET_DOMAIN}"
     persistence:
       config:
-        enabled: false
+        enabled: true
         existingClaim: homer-config
         mountPath: /www/assets
