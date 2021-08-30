@@ -27,12 +27,13 @@ spec:
       host: longhorn.${SECRET_DOMAIN}
       ingressClassName: "traefik"
       annotations:
-        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-      hosts:
-        - host: "longhorn.${SECRET_DOMAIN}"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"       
+        traefik.ingress.kubernetes.io/router.middlewares: longhorn-system-svc-longhorn-headers@kubernetescrd
+      rules:
+      - http:
           paths:
-            - path: /
-              pathType: Prefix
-      tls:
-        - hosts:
-            - "longhorn.${SECRET_DOMAIN}"
+          - path: /
+            backend:
+              serviceName: longhorn-frontend
+              servicePort: 80
