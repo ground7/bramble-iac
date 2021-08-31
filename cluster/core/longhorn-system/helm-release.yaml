@@ -30,6 +30,9 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"       
         traefik.ingress.kubernetes.io/router.middlewares: longhorn-system-svc-longhorn-headers@kubernetescrd
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "cow"
+        hajimari.io/appName: "longhorn"
       rules:
       - http:
           paths:
