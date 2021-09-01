@@ -2,9 +2,9 @@
 
 <img src="images/rpi4.png"/>
 
-<span style="font-size:larger;">**My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:)</span> 
+### **My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:) <!-- omit in toc -->
 
-_...created and managed by Flux_ (IaC :large_blue_diamond:)
+_... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc -->
 
 </div>
 
