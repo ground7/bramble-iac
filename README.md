@@ -25,9 +25,8 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc --
 
 - [:toolbox:&nbsp; Cluster Hardware](#toolbox-cluster-hardware)
 - [:open_file_folder:&nbsp; Repository Structure](#open_file_folder-repository-structure)
-- [:hammer_and_wrench:&nbsp; Under Construction](#hammer_and_wrench-under-construction)
-  - [:heavy_check_mark:&nbsp; Install Dependencies](#heavy_check_mark-install-dependencies)
-  - [:robot:&nbsp; Ansible Playbooks](#robot-ansible-playbooks)
+- [:heavy_check_mark:&nbsp; Install Dependencies](#heavy_check_mark-install-dependencies)
+- [:robot:&nbsp; Ansible Playbooks](#robot-ansible-playbooks)
 
 ### :toolbox:&nbsp; Cluster Hardware
 
@@ -41,6 +40,12 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc --
 ![blackberry](images/blackberry.png)|Blackberry|K3s Agent Node 3|Flash & SSD
 ![boysenberry](images/boysenberry.png)|Boysenberry|K3s Agent Node 4|Flash & SSD
 ![dingleberry](images/dingleberry.png)|Dingleberry|K3s Agent Node 5|Flash
+
+![elderberry](images/elderberry.png)|![cranberry](images/cranberry.png)|![snowberry](images/snowberry.png)|![strawberry](images/strawberry.png)|![blueberry](images/blueberry.png)|![blackberry](images/blackberry.png)|![boysenberry](images/boysenberry.png)|![dingleberry](images/dingleberry.png)
+:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
+Elderberry|Cranberry|Snowberry|Strawberry|Blueberry|Blackberry|Boysenberry|Dingleberry
+Server 1|Server 2|Server 3|Agent 1|Agent 2|Agent 3|Agent 4|Agent 5
+||||SSD|SSD|SSD|SSD||
 
 ### :open_file_folder:&nbsp; Repository Structure
 
@@ -73,8 +78,6 @@ cluster
     └── traefik
 ```
 
-### :hammer_and_wrench:&nbsp; Under Construction
+### :heavy_check_mark:&nbsp; Install Dependencies
 
-#### :heavy_check_mark:&nbsp; Install Dependencies
-
-#### :robot:&nbsp; Ansible Playbooks
+### :robot:&nbsp; Ansible Playbooks
