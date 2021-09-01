@@ -1,20 +1,10 @@
 <div align="center">
 
-<p align="middle">
-  <img src="/images/elderberry.png" width="32px" height="32px"/>
-  <img src="/images/cranberry.png" width="32px" height="32px"/>
-  <img src="/images/snowberry.png" width="32px" height="32px"/>
-  <img src="/images/strawberry.png" width="32px" height="32px"/>
-  <img src="/images/blueberry.png" width="32px" height="32px"/>
-  <img src="/images/blackberry.png" width="32px" height="32px"/>
-  <img src="/images/boysenberry.png" width="32px" height="32px"/>
-  <img src="/images/dingleberry.png" width="32px" height="32px"/>
-</p>
+<img src="images/rpi4.png"/>
 
+## **My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:) <!-- omit in toc -->
 
-### My Raspberry Pi Kubernetes Cluster (Bramble :deciduous_tree:) <!-- omit in toc -->
-
-_... created and managed by Flux (IaC :large_blue_diamond:)_
+### _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc -->
 
 </div>
 
@@ -31,11 +21,25 @@ _... created and managed by Flux (IaC :large_blue_diamond:)_
 
 ---
 
-# :book:&nbsp; Overview <!-- omit in toc -->
+## :book:&nbsp; Overview <!-- omit in toc -->
 
+- [:computer:&nbsp; Hardware](#computer-hardware)
 - [:open_file_folder:&nbsp; Repository structure](#open_file_folder-repository-structure)
 
-# :open_file_folder:&nbsp; Repository structure
+## :computer:&nbsp; Hardware
+
+&nbsp;|Name|Role|Storage
+:-:|:-:|:-:|:-:
+![elderberry](images/elderberry.png)|Elderberry|K3s Server Node 1|Flash
+![cranberry](images/cranberry.png)|Cranberry|K3s Server Node 2|Flash
+![snowberry](images/snowberry.png)|Snowberry|K3s Server Node 3|Flash
+![strawberry](images/strawberry.png)|Strawberry|K3s Agent Node 1|Flash & SSD
+![blueberry](images/blueberry.png)|Blueberry|K3s Agent Node 2|Flash & SSD
+![blackberry](images/blackberry.png)|Blackberry|K3s Agent Node 3|Flash & SSD
+![boysenberry](images/boysenberry.png)|Boysenberry|K3s Agent Node 4|Flash & SSD
+![dingleberry](images/dingleberry.png)|Dingleberry|K3s Agent Node 5|Flash
+
+## :open_file_folder:&nbsp; Repository structure
 
 These are the directories under `cluster` ordered by how Flux will apply them.
 
