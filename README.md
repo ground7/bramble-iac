@@ -25,8 +25,11 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc --
 
 - [:toolbox:&nbsp; Cluster Hardware](#toolbox-cluster-hardware)
 - [:open_file_folder:&nbsp; Repository Structure](#open_file_folder-repository-structure)
+- [:hammer_and_wrench:&nbsp; Under Construction](#hammer_and_wrench-under-construction)
+  - [:heavy_check_mark:&nbsp; Install Dependencies](#heavy_check_mark-install-dependencies)
+  - [:robot:&nbsp; Ansible Playbooks](#robot-ansible-playbooks)
 
-## :toolbox:&nbsp; Cluster Hardware
+### :toolbox:&nbsp; Cluster Hardware
 
 &nbsp;|Name|Role|Storage
 :-:|:-:|:-:|:-:
@@ -39,7 +42,7 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc --
 ![boysenberry](images/boysenberry.png)|Boysenberry|K3s Agent Node 4|Flash & SSD
 ![dingleberry](images/dingleberry.png)|Dingleberry|K3s Agent Node 5|Flash
 
-## :open_file_folder:&nbsp; Repository Structure
+### :open_file_folder:&nbsp; Repository Structure
 
 These are the directories under `cluster` ordered by how Flux will apply them.
 
@@ -69,3 +72,9 @@ cluster
     ├── kube-prometheus-stack
     └── traefik
 ```
+
+### :hammer_and_wrench:&nbsp; Under Construction
+
+#### :heavy_check_mark:&nbsp; Install Dependencies
+
+#### :robot:&nbsp; Ansible Playbooks
