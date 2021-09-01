@@ -4,7 +4,7 @@
 
 ### **My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:) <!-- omit in toc -->
 
-_... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc -->
+_... created and managed by Flux_ (IaC :large_blue_diamond:)
 
 </div>
 
@@ -27,27 +27,24 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc --
 - [:open_file_folder:&nbsp; Repository Structure](#open_file_folder-repository-structure)
 - [:heavy_check_mark:&nbsp; Install Dependencies](#heavy_check_mark-install-dependencies)
 - [:robot:&nbsp; Ansible Playbooks](#robot-ansible-playbooks)
+- [:closed_lock_with_key:&nbsp; SOPS](#closed_lock_with_key-sops)
 
-### :toolbox:&nbsp; Cluster Hardware
+## :toolbox:&nbsp; Cluster Hardware
 
-&nbsp;|Name|Role|Storage
-:-:|:-:|:-:|:-:
-![elderberry](images/elderberry.png)|Elderberry|K3s Server Node 1|Flash
-![cranberry](images/cranberry.png)|Cranberry|K3s Server Node 2|Flash
-![snowberry](images/snowberry.png)|Snowberry|K3s Server Node 3|Flash
-![strawberry](images/strawberry.png)|Strawberry|K3s Agent Node 1|Flash & SSD
-![blueberry](images/blueberry.png)|Blueberry|K3s Agent Node 2|Flash & SSD
-![blackberry](images/blackberry.png)|Blackberry|K3s Agent Node 3|Flash & SSD
-![boysenberry](images/boysenberry.png)|Boysenberry|K3s Agent Node 4|Flash & SSD
-![dingleberry](images/dingleberry.png)|Dingleberry|K3s Agent Node 5|Flash
+The bramble currently contains eight berries with the following properties:
+
+<div align="center">
 
 ![elderberry](images/elderberry.png)|![cranberry](images/cranberry.png)|![snowberry](images/snowberry.png)|![strawberry](images/strawberry.png)|![blueberry](images/blueberry.png)|![blackberry](images/blackberry.png)|![boysenberry](images/boysenberry.png)|![dingleberry](images/dingleberry.png)
 :-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:
 Elderberry|Cranberry|Snowberry|Strawberry|Blueberry|Blackberry|Boysenberry|Dingleberry
 Server 1|Server 2|Server 3|Agent 1|Agent 2|Agent 3|Agent 4|Agent 5
 ||||SSD|SSD|SSD|SSD||
+192.168.2.221|192.168.2.222|192.168.2.223|192.168.2.224|192.168.2.225|192.168.2.226|192.168.2.227|192.168.2.228|
 
-### :open_file_folder:&nbsp; Repository Structure
+</div>
+
+## :open_file_folder:&nbsp; Repository Structure
 
 These are the directories under `cluster` ordered by how Flux will apply them.
 
@@ -78,6 +75,8 @@ cluster
     └── traefik
 ```
 
-### :heavy_check_mark:&nbsp; Install Dependencies
+## :heavy_check_mark:&nbsp; Install Dependencies
 
-### :robot:&nbsp; Ansible Playbooks
+## :robot:&nbsp; Ansible Playbooks
+
+## :closed_lock_with_key:&nbsp; SOPS
