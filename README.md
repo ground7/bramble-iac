@@ -40,7 +40,7 @@ The bramble currently contains eight berries with the following properties:
 Elderberry|Cranberry|Snowberry|Strawberry|Blueberry|Blackberry|Boysenberry|Dingleberry
 Server 1|Server 2|Server 3|Agent 1|Agent 2|Agent 3|Agent 4|Agent 5
 ||||SSD|SSD|SSD|SSD||
-192.168.2.221|192.168.2.222|192.168.2.223|192.168.2.224|192.168.2.225|192.168.2.226|192.168.2.227|192.168.2.228|
+
 
 </div>
 
