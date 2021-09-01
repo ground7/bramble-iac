@@ -2,9 +2,9 @@
 
 <img src="images/rpi4.png"/>
 
-## **My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:) <!-- omit in toc -->
+<span style="font-size:larger;">**My Raspberry Pi Kubernetes Cluster** (Bramble :deciduous_tree:)</span> 
 
-### _... created and managed by Flux_ (IaC :large_blue_diamond:) <!-- omit in toc -->
+_...created and managed by Flux_ (IaC :large_blue_diamond:)
 
 </div>
 
@@ -23,10 +23,10 @@
 
 ## :book:&nbsp; Overview <!-- omit in toc -->
 
-- [:computer:&nbsp; Hardware](#computer-hardware)
-- [:open_file_folder:&nbsp; Repository structure](#open_file_folder-repository-structure)
+- [:toolbox:&nbsp; Cluster Hardware](#toolbox-cluster-hardware)
+- [:open_file_folder:&nbsp; Repository Structure](#open_file_folder-repository-structure)
 
-## :computer:&nbsp; Hardware
+## :toolbox:&nbsp; Cluster Hardware
 
 &nbsp;|Name|Role|Storage
 :-:|:-:|:-:|:-:
@@ -39,7 +39,7 @@
 ![boysenberry](images/boysenberry.png)|Boysenberry|K3s Agent Node 4|Flash & SSD
 ![dingleberry](images/dingleberry.png)|Dingleberry|K3s Agent Node 5|Flash
 
-## :open_file_folder:&nbsp; Repository structure
+## :open_file_folder:&nbsp; Repository Structure
 
 These are the directories under `cluster` ordered by how Flux will apply them.
 
