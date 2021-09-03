@@ -50,13 +50,29 @@ spec:
     kubeApiServer:
       enabled: true
     kubeControllerManager:
-      enabled: false
+      enabled: true
+      endpoints:
+        - 192.168.2.221
+        - 192.168.2.222
+        - 192.168.2.223
     kubeScheduler:
-      enabled: false
+      enabled: true
+      endpoints:
+        - 192.168.2.221
+        - 192.168.2.222
+        - 192.168.2.223
     kubeProxy:
-      enabled: false
+      enabled: true
+      endpoints:
+        - 192.168.2.221
+        - 192.168.2.222
+        - 192.168.2.223
     kubeEtcd:
-      enabled: false
+      enabled: true
+      endpoints:
+        - 192.168.2.221
+        - 192.168.2.222
+        - 192.168.2.223
       service:
         enabled: true
         port: 2381
