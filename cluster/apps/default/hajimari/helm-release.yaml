@@ -25,6 +25,7 @@ spec:
       namespaceSelector:
         matchNames:
           - default
+          - monitoring
           - networking
           - longhorn-system
       name: "Josiah"
