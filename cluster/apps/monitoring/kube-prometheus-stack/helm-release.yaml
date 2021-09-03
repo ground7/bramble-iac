@@ -45,6 +45,8 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           hajimari.io/enable: "true"
           hajimari.io/icon: "fire-alert"
+          hajimari.io/appName: "Alert Manager"
+          hajimari.io/group: "Observability"
         hosts:
           - "alert-manager.${SECRET_DOMAIN}"
         tls:
@@ -109,6 +111,8 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           hajimari.io/enable: "true"
           hajimari.io/icon: "fire-circle"
+          hajimari.io/appName: "Prometheus"
+          hajimari.io/group: "Observability"
         hosts:
           - "prometheus.${SECRET_DOMAIN}"
         tls:

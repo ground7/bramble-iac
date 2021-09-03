@@ -71,7 +71,7 @@ spec:
             url: http://prometheus-prometheus:9090/
             isDefault: true
     dashboards:
-      default:
+      flux:
         flux-cluster:
           url: https://raw.githubusercontent.com/fluxcd/flux2/main/manifests/monitoring/grafana/dashboards/cluster.json
           datasource: Prometheus
@@ -98,6 +98,7 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hajimari.io/enable: "true"
         hajimari.io/icon: "chart-pie"
+        hajimari.io/group: "Observability"
       hosts:
         - "grafana.${SECRET_DOMAIN}"
       tls:
