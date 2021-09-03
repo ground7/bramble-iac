@@ -59,8 +59,6 @@ spec:
         ingressClassName: "traefik"
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          hajimari.io/enable: "false"
-          hajimari.io/icon: "weather-sunset"
         hosts:
           - host: "hajimari.${SECRET_DOMAIN}"
             paths:
@@ -69,10 +67,6 @@ spec:
         tls:
           - hosts:
               - "hajimari.${SECRET_DOMAIN}"
-    persistence:
-      data:
-        enabled: true
-        existingClaim: hajimari-config
     podAnnotations:
       configmap.reloader.stakater.com/reload: "hajimari-settings"
     resources:
