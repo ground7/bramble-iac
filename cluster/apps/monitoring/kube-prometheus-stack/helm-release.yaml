@@ -18,6 +18,46 @@ spec:
       interval: 5m
   values:
     fullnameOverride: prometheus
+    alertmanager:
+      config:
+        receivers:
+          - name: "null"
+        route:
+          group_by: ["alertname", "job"]
+          group_wait: 30s
+          group_interval: 5m
+          repeat_interval: 6h
+          routes:
+            - receiver: "null"
+              match:
+                alertname: Watchdog
+        inhibit_rules:
+          - source_match:
+              severity: "critical"
+            target_match:
+              severity: "warning"
+            equal: ["alertname", "namespace"]
+      ingress:
+        enabled: true
+        pathType: Prefix
+        ingressClassName: "traefik"
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "fire-alert"
+        hosts:
+          - "alert-manager.${SECRET_DOMAIN}"
+        tls:
+          - hosts:
+              - "alert-manager.${SECRET_DOMAIN}"
+      alertmanagerSpec:
+        storage:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: "longhorn"
+              resources:
+                requests:
+                  storage: 1Gi
     nodeExporter:
       serviceMonitor:
         relabelings:
@@ -50,33 +90,13 @@ spec:
     kubeApiServer:
       enabled: true
     kubeControllerManager:
-      enabled: true
-      endpoints:
-        - 192.168.2.221
-        - 192.168.2.222
-        - 192.168.2.223
+      enabled: false
     kubeScheduler:
-      enabled: true
-      endpoints:
-        - 192.168.2.221
-        - 192.168.2.222
-        - 192.168.2.223
+      enabled: false
     kubeProxy:
-      enabled: true
-      endpoints:
-        - 192.168.2.221
-        - 192.168.2.222
-        - 192.168.2.223
+      enabled: false
     kubeEtcd:
-      enabled: true
-      endpoints:
-        - 192.168.2.221
-        - 192.168.2.222
-        - 192.168.2.223
-      service:
-        enabled: true
-        port: 2381
-        targetPort: 2381
+      enabled: false
     # Setting this option to 0 disabled CPU limits
     prometheusOperator:
       configReloaderCpu: 0
