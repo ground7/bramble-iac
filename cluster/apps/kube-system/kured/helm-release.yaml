@@ -19,7 +19,7 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/kured
+      repository: quay.io/paulfantom/kured
     updateStrategy: RollingUpdate
     configuration:
       timeZone: "America/New_York"
