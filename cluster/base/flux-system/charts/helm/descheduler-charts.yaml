@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
-  name: bitnami-charts
+  name: descheduler-charts
   namespace: flux-system
 spec:
   interval: 1h
-  url: https://charts.bitnami.com/bitnami
+  url: https://kubernetes-sigs.github.io/descheduler
   timeout: 3m
