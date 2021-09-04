@@ -23,18 +23,6 @@ spec:
       taintToleration: node-role.kubernetes.io/master=true:NoSchedule
       defaultDataPath: "/storage"
       defaultDataLocality: best-effort
-    longhornManager:
-      tolerations: 
-      - key: "node-role.kubernetes.io/master"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
-    longhornDriver:
-      tolerations:
-      - key: "node-role.kubernetes.io/master"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
     ingress:
       enabled: true
       host: longhorn.${SECRET_DOMAIN}
