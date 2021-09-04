@@ -17,18 +17,28 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    # TODO: Switch to Deployment on next release
-    kind: CronJob
+    kind: Deployment
+    image:
+      repository: k8s.gcr.io/descheduler/descheduler
+    resources:
+      requests:
+        cpu: 500m
+        memory: 256Mi
+    cronJobApiVersion: "batch/v1beta1"  # Use "batch/v1beta1" for k8s version < 1.21.0. TODO(@7i) remove with 1.23 release
+    schedule: "*/2 * * * *"
+    deschedulingInterval: 5m
     deschedulerPolicy:
       strategies:
         RemoveDuplicates:
-          enabled: false
+          enabled: true
+        RemovePodsViolatingNodeTaints:
+          enabled: true
         RemovePodsViolatingNodeAffinity:
           enabled: true
           params:
             nodeAffinityType:
-              - requiredDuringSchedulingIgnoredDuringExecution
+            - requiredDuringSchedulingIgnoredDuringExecution
         RemovePodsViolatingInterPodAntiAffinity:
-          enabled: false
+          enabled: true
         LowNodeUtilization:
           enabled: false
