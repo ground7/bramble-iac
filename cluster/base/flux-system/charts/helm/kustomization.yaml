@@ -10,3 +10,4 @@ resources:
   - prometheus-community-charts.yaml
   - stakater-charts.yaml
   - traefik-charts.yaml
+  - weaveworks-kured-charts.yaml
