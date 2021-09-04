@@ -20,7 +20,6 @@ spec:
       backupTarget: s3://longhorn-backup@us-east-1/
       backupTargetCredentialSecret: minio-secret
       createDefaultDiskLabeledNodes: true
-      taintToleration: node-role.kubernetes.io/master=true:NoSchedule
       defaultDataPath: "/storage"
       defaultDataLocality: best-effort
     ingress:
