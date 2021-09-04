@@ -17,11 +17,23 @@ spec:
         namespace: flux-system
   values:
     defaultSettings:
-        backupTarget: s3://longhorn-backup@us-east-1/
-        backupTargetCredentialSecret: minio-secret
-        createDefaultDiskLabeledNodes: true
-        defaultDataPath: "/storage"
-        defaultDataLocality: best-effort
+      backupTarget: s3://longhorn-backup@us-east-1/
+      backupTargetCredentialSecret: minio-secret
+      createDefaultDiskLabeledNodes: true
+      defaultDataPath: "/storage"
+      defaultDataLocality: best-effort
+    longhornManager:
+      tolerations: 
+      - key: "node-role.kubernetes.io/master"
+        operator: "Equal"
+        value: "value"
+        effect: "NoSchedule"
+    longhornDriver:
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Equal"
+        value: "value"
+        effect: "NoSchedule"
     ingress:
       enabled: true
       host: longhorn.${SECRET_DOMAIN}

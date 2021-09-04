@@ -42,17 +42,17 @@ spec:
             - name: GitHub
               url: "https://github.com"
             - name: Gitea
-              url: "https://gitea.loyalslave.rocks"
+              url: "https://gitea.${SECRET_DOMAIN}"
         - name: Media
           links:
             - name: Emby
-              url: "https://emby.loyalslave.rocks"
+              url: "https://emby.${SECRET_DOMAIN}"
             - name: Ombi
-              url: "https://ombi.loyalslave.rocks"
+              url: "https://ombi.${SECRET_DOMAIN}"
             - name: Books
-              url: "https://books.loyalslave.rocks"
+              url: "https://books.${SECRET_DOMAIN}"
             - name: Manga
-              url: "https://manga.loyalslave.rocks"
+              url: "https://manga.${SECRET_DOMAIN}"
     ingress:
       main:
         enabled: true
