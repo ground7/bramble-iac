@@ -23,12 +23,12 @@ spec:
       defaultDataPath: "/storage"
       defaultDataLocality: best-effort
       systemManagedComponentsNodeSelector: node-role.kubernetes.io/worker=true
-      longhornManager:
-        nodeSelector: 
-          node-role.kubernetes.io/worker: "true"
-      longhornDriver:
-        nodeSelector: 
-          node-role.kubernetes.io/worker: "true"
+    longhornManager:
+      nodeSelector: 
+        node-role.kubernetes.io/worker: "true"
+    longhornDriver:
+      nodeSelector: 
+        node-role.kubernetes.io/worker: "true"
     ingress:
       enabled: true
       host: longhorn.${SECRET_DOMAIN}
