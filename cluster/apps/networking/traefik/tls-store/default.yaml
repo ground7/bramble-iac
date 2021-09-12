@@ -2,7 +2,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: TLSStore
 metadata:
-  name: loyal-cert
+  name: default
   namespace: networking
 spec:
   defaultCertificate:
