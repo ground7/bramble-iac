@@ -13,7 +13,7 @@ spec:
       chart: directpv-chart
       version: v4.0.9
       sourceRef:
-        kind: HelmChart
+        kind: GitRepository
         name: directpv
         namespace: flux-system
   maxHistory: 2
