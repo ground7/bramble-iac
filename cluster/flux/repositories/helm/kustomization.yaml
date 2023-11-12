@@ -1,0 +1,13 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./actions-runner-controller.yaml
+  - ./cilium.yaml
+  - ./cloudnative-pg.yaml
+  - ./coredns.yaml
+  - ./external-dns.yaml
+  - ./external-secrets.yaml
+  - ./jetstack.yaml
+  - ./stakater.yaml
