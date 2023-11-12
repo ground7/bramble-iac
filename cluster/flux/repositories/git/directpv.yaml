@@ -1,0 +1,16 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: directpv
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://github.com/minio/directpv/
+  ref:
+    tag: v4.0.9
+  ignore: |
+    # exclude all
+    /*
+    # include chart directory
+    !/operator/helm-charts/directpv-chart

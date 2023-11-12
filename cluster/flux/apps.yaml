@@ -7,11 +7,11 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./kubernetes/apps
+  path: ./cluster/apps
   prune: true
   sourceRef:
     kind: GitRepository
-    name: home-kubernetes
+    name: bramble-iac
   decryption:
     provider: sops
     secretRef:
