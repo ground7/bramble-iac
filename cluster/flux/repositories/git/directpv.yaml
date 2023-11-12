@@ -14,3 +14,16 @@ spec:
     /*
     # include chart directory
     !/operator/helm-charts/directpv-chart
+---
+apiVersion: source.toolkit.fluxcd.io/v2beta1
+kind: HelmChart
+metadata:
+  name: directpv
+  namespace: flux-system
+spec:
+  chart: ./operator/helm-charts/directpv-chart
+  sourceRef:
+    name: directpv
+    kind: GitRepository
+  interval: 10m
+  reconcileStrategy: Revision

@@ -10,11 +10,11 @@ spec:
   timeout: 15m
   chart:
     spec:
-      chart: rook-ceph
-      version: v1.12.7
+      chart: directpv-chart
+      version: v4.0.9
       sourceRef:
-        kind: HelmRepository
-        name: rook-ceph
+        kind: HelmChart
+        name: directpv
         namespace: flux-system
   maxHistory: 2
   install:
