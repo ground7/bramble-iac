@@ -10,7 +10,7 @@ spec:
   timeout: 15m
   chart:
     spec:
-      chart: directpv-chart
+      chart: ./operator/helm-charts/directpv-chart
       version: v4.0.9
       sourceRef:
         kind: GitRepository
