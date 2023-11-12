@@ -23,11 +23,11 @@ _... created and managed by Flux_ (IaC :large_blue_diamond:)
 
 ## :book:&nbsp; Overview <!-- omit in toc -->
 
-- [:toolbox:&nbsp; Cluster Hardware](#toolbox-cluster-hardware)
-- [:open_file_folder:&nbsp; Repository Structure](#open_file_folder-repository-structure)
-- [:heavy_check_mark:&nbsp; Install Dependencies](#heavy_check_mark-install-dependencies)
-- [:robot:&nbsp; Ansible Playbooks](#robot-ansible-playbooks)
-- [:closed_lock_with_key:&nbsp; SOPS](#closed_lock_with_key-sops)
+- [:toolbox:  Cluster Hardware](#toolbox-cluster-hardware)
+- [:open\_file\_folder:  Repository Structure](#open_file_folder-repository-structure)
+- [:heavy\_check\_mark:  Install Dependencies](#heavy_check_mark-install-dependencies)
+- [:robot:  Ansible Playbooks](#robot-ansible-playbooks)
+- [:closed\_lock\_with\_key:  SOPS](#closed_lock_with_key-sops)
 
 ## :toolbox:&nbsp; Cluster Hardware
 
@@ -45,35 +45,6 @@ Server 1|Server 2|Server 3|Agent 1|Agent 2|Agent 3|Agent 4|Agent 5
 </div>
 
 ## :open_file_folder:&nbsp; Repository Structure
-
-These are the directories under `cluster` ordered by how Flux will apply them.
-
-- **base** directory is the entrypoint to Flux and contains pointers to all the upstream helm chart repositories
-- **crds** directory contains custom resource definitions (CRDs) that need to exist globally in the cluster before anything else exists
-- **core** directory (depends on **crds**) is for important infrastructure applications (grouped by namespace) that should never be pruned by Flux
-- **apps** directory (depends on **core**) is for common applications (grouped by namespace) that can be pruned by Flux if they are not tracked by Git anymore
-
-```
-cluster
-├── apps
-│   ├── default
-│   ├── kube-system
-│   ├── monitoring
-│   ├── networking
-│   └── system-upgrade
-├── base
-│   └── flux-system
-├── core
-│   ├── cert-manager
-│   ├── longhorn-system
-│   ├── metallb-system
-│   ├── namespaces
-│   └── system-upgrade
-└── crds
-    ├── cert-manager
-    ├── kube-prometheus-stack
-    └── traefik
-```
 
 ## :heavy_check_mark:&nbsp; Install Dependencies
 

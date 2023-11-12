@@ -1,0 +1,49 @@
+---
+version: "3"
+
+tasks:
+  default:
+    silent: true
+    cmds: ["task -l .taskfile/talos.yml"]
+  generate:
+    desc: Create Talos Machine Configs Using TalHelper
+    cmds:
+      - talhelper gensecret -f {{.TALOS_DIR}}/clusterconfig/bramble-elderberry.yaml > {{.TALOS_DIR}}/talsecret.sops.yaml
+      - talhelper genconfig -c {{.TALOS_DIR}}/talconfig.yaml -s {{.TALOS_DIR}}/talsecret.sops.yaml -o {{.TALOS_DIR}}/clusterconfig
+      - sops -e -i {{.TALOS_DIR}}/talsecret.sops.yaml
+  apply:
+    desc: Apply Talos Machine Configs to Each Node
+    cmds:
+      - talosctl -n 192.168.2.221 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-elderberry.yaml || true
+      - talosctl -n 192.168.2.222 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-cranberry.yaml || true
+      - talosctl -n 192.168.2.223 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-snowberry.yaml || true
+      - talosctl -n 192.168.2.224 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-strawberry.yaml || true
+      - talosctl -n 192.168.2.225 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-blueberry.yaml || true
+      - talosctl -n 192.168.2.226 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-blackberry.yaml || true
+      - talosctl -n 192.168.2.227 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-boysenberry.yaml || true
+      - talosctl -n 192.168.2.228 apply-config --talosconfig {{.TALOS_DIR}}/clusterconfig/talosconfig --insecure --file {{.TALOS_DIR}}/clusterconfig/bramble-dingleberry.yaml || true
+  bootstrap:
+    desc: Bring Up Cluster and Grab Kubeconfig
+    cmds:
+      - talosctl -n 192.168.2.221 bootstrap
+      - talosctl -n 192.168.2.221 kubeconfig
+  reset:
+    desc: Reset Talos Machine Configs
+    cmds:
+      - talosctl -n 192.168.2.228 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL || true
+      - talosctl -n 192.168.2.227 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL || true
+      - talosctl -n 192.168.2.226 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL || true
+      - talosctl -n 192.168.2.225 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL || true
+      - talosctl -n 192.168.2.224 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL || true
+      - talosctl -n 192.168.2.223 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL --graceful=false || true
+      - talosctl -n 192.168.2.222 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL --graceful=false || true
+      - talosctl -n 192.168.2.221 reset --system-labels-to-wipe STATE --system-labels-to-wipe EPHEMERAL --graceful=false || true
+  deploy:
+    desc: Deploy Cilium and Kubelet CSR Approver
+    cmds:
+      - rm -rf {{.TALOS_DIR}}/cni/charts
+      - kubectl kustomize --enable-helm {{.TALOS_DIR}}/cni | kubectl apply -f -
+      - rm -rf {{.TALOS_DIR}}/cni/charts
+      - rm -rf {{.TALOS_DIR}}/kubelet-csr-approver/charts
+      - kubectl kustomize --enable-helm {{.TALOS_DIR}}/kubelet-csr-approver | kubectl apply -f -
+      - rm -rf {{.TALOS_DIR}}/kubelet-csr-approver/charts

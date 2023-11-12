@@ -1,0 +1,172 @@
+---
+clusterName: bramble
+talosVersion: v1.5.5
+kubernetesVersion: v1.28.3
+endpoint: https://192.168.2.220:6443
+allowSchedulingOnMasters: true
+cniConfig:
+  name: none
+additionalApiServerCertSans:
+  - 192.168.2.220
+additionalMachineCertSans:
+  - 192.168.2.220
+  - bramble.lan
+proxy:
+  disabled: true
+nodes:
+  - hostname: elderberry
+    ipAddress: 192.168.2.221
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.221/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+        vip:
+          ip: 192.168.2.220
+  - hostname: cranberry
+    ipAddress: 192.168.2.222
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.222/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+        vip:
+          ip: 192.168.2.220
+  - hostname: snowberry
+    ipAddress: 192.168.2.223
+    controlPlane: true
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.223/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+        vip:
+          ip: 192.168.2.220
+  - hostname: strawberry
+    ipAddress: 192.168.2.224
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.224/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+  - hostname: blueberry
+    ipAddress: 192.168.2.225
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.225/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+  - hostname: blackberry
+    ipAddress: 192.168.2.226
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.226/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+  - hostname: boysenberry
+    ipAddress: 192.168.2.227
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.227/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+  - hostname: dingleberry
+    ipAddress: 192.168.2.228
+    installDisk: /dev/mmcblk0
+    nameservers:
+      - 1.1.1.1
+      - 8.8.8.8
+    networkInterfaces:
+      - deviceSelector:
+          busPath: "0*"
+        addresses:
+          - 192.168.2.228/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 192.168.2.1
+controlPlane:
+  patches:
+    - |-
+      - op: add
+        path: /machine/kubelet/extraArgs
+        value:
+          rotate-server-certificates: "true"
+          feature-gates: CronJobTimeZone=true,GracefulNodeShutdown=true
+      - op: add
+        path: /cluster/controllerManager/extraArgs
+        value:
+          bind-address: 0.0.0.0
+      - op: add
+        path: /cluster/scheduler/extraArgs
+        value:
+          bind-address: 0.0.0.0
+    - |-
+      cluster:
+        proxy:
+          disabled: true
+    - |-
+      machine:
+        network:
+          extraHostEntries:
+            - ip: 192.168.2.220
+              aliases:
+                - bramble.lan
+worker:
+  patches:
+    - |-
+      - op: add
+        path: /machine/kubelet/extraArgs
+        value:
+          rotate-server-certificates: "true"
+          feature-gates: CronJobTimeZone=true,GracefulNodeShutdown=true

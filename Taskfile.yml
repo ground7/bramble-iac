@@ -2,15 +2,17 @@
 version: "3"
 
 vars:
-  PROJECT_DIR:
-    sh: "git rev-parse --show-toplevel"
-  CLUSTER_DIR: "{{.PROJECT_DIR}}/cluster"
+  CLUSTER_DIR: "{{.ROOT_DIR}}/cluster"
+  TALOS_DIR: "{{.ROOT_DIR}}/talos"
 
 env:
-  KUBECONFIG: "{{.PROJECT_DIR}}/kubeconfig"
+  KUBECONFIG: "{{.ROOT_DIR}}/kubeconfig"
+  SOPS_AGE_KEY_FILE: "/Users/josiah/Library/Application/Support/sops/age/keys.txt"
 
 includes:
-  flux: .taskfiles/flux.yml
-  format: .taskfiles/format.yml
-  lint: .taskfiles/lint.yml
-  pre-commit: .taskfiles/pre-commit.yml
+  talos: .taskfiles/talos.yml
+
+tasks:
+  default:
+    silent: true
+    cmds: ["task -l"]

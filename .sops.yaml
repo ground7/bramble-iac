@@ -1,6 +1,11 @@
----
 creation_rules:
-  - encrypted_regex: "^(data|stringData)$"
-    pgp: >-
-      1DD4ABC83CD871B6ED7C66D6282DC0E780A9C001,
-      572C00D8FD4A214E08C0B0B76216E574F9CE6864
+  - encrypted_regex: '^(data|stringData|caBundle)$'
+    path_regex: 'cluster/.*\.sops\.ya?ml$'
+    age: >-
+      age1s4gf4qkcuy5t3ksgupe7q8hyesmemtvnvafa9nkpfzc3zewl9q4q33qjfm
+  - path_regex: 'talos/.*\.sops\.ya?ml$'
+    age: >-
+      age1s4gf4qkcuy5t3ksgupe7q8hyesmemtvnvafa9nkpfzc3zewl9q4q33qjfm
+  - path_regex: '.*-secret\.sops\.ya?ml$'
+    age: >-
+      age1s4gf4qkcuy5t3ksgupe7q8hyesmemtvnvafa9nkpfzc3zewl9q4q33qjfm
