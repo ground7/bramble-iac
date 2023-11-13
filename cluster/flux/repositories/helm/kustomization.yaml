@@ -10,4 +10,5 @@ resources:
   - ./external-dns.yaml
   - ./external-secrets.yaml
   - ./jetstack.yaml
+  - ./rook-ceph.yaml
   - ./stakater.yaml
