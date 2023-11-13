@@ -45,7 +45,6 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
       osd_class_update_on_start = false
-    pspEnable: false
     cephClusterSpec:
       network:
         provider: host
@@ -66,9 +65,17 @@ spec:
           osdsPerDevice: "1"
         nodes:
           - name: strawberry
+            devices:
+              - name: /dev/sda
           - name: blueberry
+            devices:
+              - name: /dev/sda
           - name: blackberry
+            devices:
+              - name: /dev/sda
           - name: boysenberry
+            devices:
+              - name: /dev/sda
     cephBlockPools:
       - name: ceph-blockpool
         spec:
