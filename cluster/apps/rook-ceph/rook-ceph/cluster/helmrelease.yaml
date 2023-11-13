@@ -53,7 +53,7 @@ spec:
             enabled: true
           requireMsgr2: true
       crashCollector:
-        disable: false
+        disable: true
       dashboard:
         enabled: true
         urlPrefix: /
@@ -81,7 +81,7 @@ spec:
         spec:
           failureDomain: host
           replicated:
-            size: 6
+            size: 3
         storageClass:
           enabled: true
           name: ceph-block
