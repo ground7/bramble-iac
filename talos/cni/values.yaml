@@ -64,7 +64,7 @@ hubble:
       enabled: true
       className: cilium
       hosts:
-        - hubble.lan
+        - hubble.hutchinson.house
     rollOutPods: true
 securityContext:
   capabilities:
