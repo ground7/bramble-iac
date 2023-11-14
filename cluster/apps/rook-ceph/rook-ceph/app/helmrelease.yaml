@@ -27,7 +27,9 @@ spec:
     keepHistory: false
   values:
     csi:
+      enableRbdDriver: true
+      enableCephfsDriver: false
+      enableCephfsSnapshotter: false
+      enableNFSSnapshotter: false
       csiAddons:
-        enabled: false # Set to true when using kubernetes-csi-addons
-    monitoring:
-      enabled: true
+        enabled: false

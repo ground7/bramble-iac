@@ -35,9 +35,9 @@ spec:
         host:
           name: &host rook.hutchinson.house
           path: /
-        tls:
-          - hosts:
-              - *host
+        # tls:
+        #   - hosts:
+        #       - *host
     toolbox:
       enabled: true
     configOverride: |
