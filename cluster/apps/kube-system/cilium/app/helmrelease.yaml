@@ -43,7 +43,7 @@ spec:
       name: bramble
       id: 1
     clustermesh:
-      useAPIServer: true
+      useAPIServer: false
       apiserver:
         tls:
           auto:
