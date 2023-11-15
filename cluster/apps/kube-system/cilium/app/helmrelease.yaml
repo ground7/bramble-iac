@@ -46,12 +46,12 @@ spec:
       useAPIServer: true
       apiserver:
         tls:
-          auto: true
-          method: certmanager
-          certManagerIssuerRef:
-            group: cert-manager.io
-            kind: ClusterIssuer
-            name: letsencrypt-staging
+          auto:
+            method: certmanager
+            certManagerIssuerRef:
+              group: cert-manager.io
+              kind: ClusterIssuer
+              name: letsencrypt-staging
     containerRuntime:
       integration: containerd
     endpointRoutes:
