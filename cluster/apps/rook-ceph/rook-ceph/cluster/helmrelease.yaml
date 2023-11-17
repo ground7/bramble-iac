@@ -60,7 +60,7 @@ spec:
         enabled: true
         urlPrefix: /
         port: 8443
-        ssl: true
+        ssl: false
       storage:
         useAllNodes: false
         useAllDevices: false
