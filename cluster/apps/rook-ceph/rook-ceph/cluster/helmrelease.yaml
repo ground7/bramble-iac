@@ -32,6 +32,8 @@ spec:
     ingress:
       dashboard:
         ingressClassName: cilium
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-staging
         host:
           name: &host rook.hutchinson.house
           path: /
