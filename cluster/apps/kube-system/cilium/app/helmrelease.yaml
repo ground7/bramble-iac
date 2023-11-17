@@ -82,9 +82,9 @@ spec:
           className: cilium
           hosts:
             - &host hubble.hutchinson.house
-          # tls:
-          #   - hosts:
-          #       - *host
+          tls:
+            - hosts:
+                - *host
     ipam:
       mode: kubernetes
     ipv4NativeRoutingCIDR: 10.244.0.0/16
