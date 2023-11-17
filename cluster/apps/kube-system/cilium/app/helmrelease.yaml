@@ -82,6 +82,7 @@ spec:
           className: cilium
           annotations:
             cert-manager.io/cluster-issuer: letsencrypt-staging
+            kubernetes.io/tls-acme: "true"
           hosts:
             - &host hubble.hutchinson.house
           tls:
