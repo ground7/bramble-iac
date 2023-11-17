@@ -80,6 +80,8 @@ spec:
         ingress:
           enabled: true
           className: cilium
+          annotations:
+            cert-manager.io/cluster-issuer: letsencrypt-staging
           hosts:
             - &host hubble.hutchinson.house
           tls:
