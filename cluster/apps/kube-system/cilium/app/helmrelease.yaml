@@ -87,6 +87,7 @@ spec:
           tls:
             - hosts:
                 - *host
+              secretName: hubble-tls
     ipam:
       mode: kubernetes
     ipv4NativeRoutingCIDR: 10.244.0.0/16
