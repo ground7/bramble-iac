@@ -49,8 +49,8 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
       osd_class_update_on_start = false
-      [mgr]
-      mgr_dashboard_server_port = 7000
+    # [mgr]
+    # mgr_dashboard_server_port = 7000
     cephClusterSpec:
       network:
         provider: host
@@ -63,7 +63,7 @@ spec:
       dashboard:
         enabled: true
         urlPrefix: /
-        port: 7000
+        port: 8080
         ssl: false
       storage:
         useAllNodes: false
