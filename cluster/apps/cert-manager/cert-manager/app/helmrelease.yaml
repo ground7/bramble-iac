@@ -31,7 +31,7 @@ spec:
       - --dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53
       - --dns01-recursive-nameservers-only
     ingressShim:
-      defaultIssuerName: "letsencrypt-staging"
+      defaultIssuerName: "letsencrypt-production"
       defaultIssuerKind: "ClusterIssuer"
       defaultIssuerGroup: "cert-manager.io"
     podDnsPolicy: None
