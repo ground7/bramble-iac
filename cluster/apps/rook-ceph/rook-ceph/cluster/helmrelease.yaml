@@ -33,7 +33,7 @@ spec:
       dashboard:
         ingressClassName: cilium
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-staging
+          cert-manager.io/cluster-issuer: letsencrypt-production
           kubernetes.io/tls-acme: "true"
         host:
           name: &host rook.hutchinson.house
