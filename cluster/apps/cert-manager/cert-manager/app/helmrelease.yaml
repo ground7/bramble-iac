@@ -30,9 +30,10 @@ spec:
     extraArgs:
       - --dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53
       - --dns01-recursive-nameservers-only
-      - --set ingressShim.defaultIssuerName=letsencrypt-staging
-      - --set ingressShim.defaultIssuerKind=ClusterIssuer
-      - --set ingressShim.defaultIssuerGroup=cert-manager.io
+    ingressShim:
+      defaultIssuerName: "letsencrypt-staging"
+      defaultIssuerKind: "ClusterIssuer"
+      defaultIssuerGroup: "cert-manager.io"
     podDnsPolicy: None
     podDnsConfig:
       nameservers:
