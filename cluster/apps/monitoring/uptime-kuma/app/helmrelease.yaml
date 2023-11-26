@@ -33,11 +33,11 @@ spec:
       main:
         enabled: true
         className: cilium
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-production
-          kubernetes.io/tls-acme: "true"
+        #annotations:
+        #  cert-manager.io/cluster-issuer: letsencrypt-production
+        #  kubernetes.io/tls-acme: "true"
         hosts:
-          - host: &host uptime.hutchinson.house
+          - host: &host uptime.bramble.lan
             paths:
               - path: "/"
                 pathType: "Prefix"
