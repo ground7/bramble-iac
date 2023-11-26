@@ -47,7 +47,7 @@ spec:
         #  cert-manager.io/cluster-issuer: letsencrypt-production
         #  kubernetes.io/tls-acme: "true"
         hosts:
-          - host: &host uptime.bramble.lan
+          - host: &host uptime.hutchinson.house
             paths:
               - path: "/"
                 pathType: "Prefix"
