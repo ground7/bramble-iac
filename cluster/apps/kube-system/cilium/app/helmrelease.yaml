@@ -80,15 +80,15 @@ spec:
         ingress:
           enabled: true
           className: cilium
-          annotations:
-            cert-manager.io/cluster-issuer: letsencrypt-production
-            kubernetes.io/tls-acme: "true"
+          # annotations:
+          #   cert-manager.io/cluster-issuer: letsencrypt-production
+          #   kubernetes.io/tls-acme: "true"
           hosts:
             - &host hubble.hutchinson.house
-          tls:
-            - hosts:
-                - *host
-              secretName: hubble-tls
+          # tls:
+          #   - hosts:
+          #       - *host
+          #     secretName: hubble-tls
     ipam:
       mode: kubernetes
     ipv4NativeRoutingCIDR: 10.244.0.0/16

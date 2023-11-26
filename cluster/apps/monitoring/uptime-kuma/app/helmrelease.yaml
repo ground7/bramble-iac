@@ -53,10 +53,10 @@ spec:
                 pathType: "Prefix"
                 service:
                   name: main
-        tls:
-          - hosts:
-              - *host
-            secretName: uptime-tls
+        # tls:
+        #   - hosts:
+        #       - *host
+        #     secretName: uptime-tls
     persistence:
       data:
         enabled: true
