@@ -32,16 +32,16 @@ spec:
     ingress:
       dashboard:
         ingressClassName: cilium
-        # annotations:
-        #   cert-manager.io/cluster-issuer: letsencrypt-production
-        #   kubernetes.io/tls-acme: "true"
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          kubernetes.io/tls-acme: "true"
         host:
           name: &host rook.hutchinson.house
           path: /
-        # tls:
-        #   - hosts:
-        #       - *host
-        #     secretName: rook-tls
+        tls:
+          - hosts:
+              - *host
+            secretName: rook-tls
     toolbox:
       enabled: true
     configOverride: |
